@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/AccountService.module/Service Descriptors/accountservice.module.Process-Account.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1499080001525"
+}]}

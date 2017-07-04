@@ -1,0 +1,7 @@
+{
+    "records": [],
+    "resources": [{
+        "location": "Service Descriptors/accountservice.module.Process-Account.json",
+        "type": "generated"
+    }]
+}
