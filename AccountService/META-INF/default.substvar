@@ -59,7 +59,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//AccountService.module//DB_URL</name>
-			<value>jdbc:postgresql://bwce-account.czbcxdkopv3u.ap-south-1.rds.amazonaws.com:5432/AccountDB</value>
+			<value>jdbc:postgresql://bwce-account.czbcxdkopv3u.ap-south-1.rds.amazonaws.com:5432/account</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
