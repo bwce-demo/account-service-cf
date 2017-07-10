@@ -6,10 +6,6 @@
   <artifactId>AccountService.parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <properties>
-  	<sonar.projectName>AccountService_CF</sonar.projectName>
-    <sonar.sources>../AccountService.module/.</sonar.sources>
-  </properties>
   <modules>
     <module>../AccountService.module</module>
     <module>../AccountService</module>
@@ -23,11 +19,6 @@
         <configuration>
           <skip>true</skip>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>3.2</version>
       </plugin>
     </plugins>
   </build>
