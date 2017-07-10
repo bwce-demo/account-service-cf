@@ -12,7 +12,7 @@
   <packaging>bwmodule</packaging>
   <properties>
   	<sonar.projectName>AccountService_CF</sonar.projectName>
-    <sonar.sources>./AccountService.module/.</sonar.sources>
+    <sonar.sources>.</sonar.sources>
   </properties>
   <dependencies>
     <dependency>
