@@ -10,10 +10,6 @@
   </parent>
   <artifactId>AccountService.module</artifactId>
   <packaging>bwmodule</packaging>
-  <properties>
-  	<sonar.projectName>AccountService_CF</sonar.projectName>
-    <sonar.sources>.</sonar.sources>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.tibco.plugins</groupId>
@@ -38,11 +34,6 @@
         <configuration>
           <skip>true</skip>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>3.2</version>
       </plugin>
     </plugins>
   </build>
