@@ -79,6 +79,12 @@
               <version></version>
               <plan>standard</plan>
             </service>
+            <service>
+              <name>app-autoscaler</name>
+              <label>app-autoscaler</label>
+              <version></version>
+              <plan>standard</plan>
+            </service>
           </services>
         </configuration>
       </plugin>
