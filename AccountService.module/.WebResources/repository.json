@@ -1,7 +1,17 @@
 {
-    "records": [],
-    "resources": [{
-        "location": "Service Descriptors/accountservice.module.Process-Account.json",
-        "type": "generated"
-    }]
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/accountservice.module.Process-Account.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/accountservice.module.Account-Account.json",
+            "type": "generated"
+        }
+    ]
 }

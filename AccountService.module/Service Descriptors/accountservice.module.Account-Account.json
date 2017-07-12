@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Account Service",
+    "description" : "Account Service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/account/{id}" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-account",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a AccountDetails to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/AccountDetails"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "AccountDetails" : {
+      "type" : "object",
+      "required" : [ "Amount", "AccountType", "AccountNumber" ],
+      "properties" : {
+        "AccountNumber" : {
+          "type" : "integer"
+        },
+        "AccountType" : {
+          "type" : "string"
+        },
+        "Amount" : {
+          "type" : "number"
+        }
+      }
+    }
+  }
+}
