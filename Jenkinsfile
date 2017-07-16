@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        tool(name: 'Maven-3.3.9', type: 'Maven')
+        tool(name: 'Maven', type: 'Maven-3.3.9')
       }
     }
     stage('Checkout') {
