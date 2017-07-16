@@ -8,8 +8,8 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh '''cd *.module
-&& mvn clean sonar:sonar'''
+        sh 'cd *.module'
+        sh 'mvn clean sonar:sonar'
       }
     }
   }
