@@ -84,7 +84,7 @@
               <name>bwce-monitoring</name>
               <label>user-provided</label>
               <version></version>
-              <plan>standard</plan>
+              <plan></plan>
             </service>
           </services>
         </configuration>
