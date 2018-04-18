@@ -80,6 +80,12 @@
               <version></version>
               <plan>standard</plan>
             </service>
+            <service>
+              <name>bwce-monioring</name>
+              <label>user-provided</label>
+              <version></version>
+              <plan>standard</plan>
+            </service>
           </services>
         </configuration>
       </plugin>
