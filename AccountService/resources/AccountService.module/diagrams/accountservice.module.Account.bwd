@@ -1,0 +1,47 @@
+<process-dir height="294" id="accountservice.module.Account" name="accountservice.module.Account" type="process" width="609" x="140" y="20">
+<partnerLinks>
+<partner-link id="account" myRole="use" name="account" partnerLinkType="partnerLinkType" partnerType="bw.rest"/>
+</partnerLinks>
+<ProcessInfo createdBy="tibco" createdOn="Mon Jul 03 06:43:02 EDT 2017" description="" modifiedBy="" modifiedOn="" modifiers="public" productVersion="2.3.0 V29 2017-05-09" scalable="true" singleton="true" stateless="true" type="IT"/>
+<pick collapse="false" createInstance="true" height="164" id="ed237948-e720-4a0d-92e3-55cfc03312f3" name="pick" type="pick" width="458" x="76" y="44">
+<on-message height="144" id="607b4ea0-3547-4448-a960-a3fafc21efbe" input="true" operation="get" output="true" partner-link="account" portType="account" type="onMessage" variable="get" width="440" x="9" y="11">
+<activity-dir height="16" id="28536bff-d088-411b-8ad4-0d76adc53978" name="OnMessageStart" type="onMessageStart" width="16" x="-19" y="63"/>
+<activity-dir height="48" id="66172106-babe-4368-bc32-3f52092636e7" name="getOut" operation="get" partnerLink="account" portType="account" type="com.tibco.bw.core.design.process.editor.Activity_4002_Reply" variable="getOut-input" width="48" x="292" y="35">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20170703064302PLT&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1499080001525&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;JDBCQuery&quot;/&gt;&lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;tns1:AccountDetails&gt;&lt;tns1:AccountNumber&gt;&lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/id&quot;/&gt;&lt;/tns1:AccountNumber&gt;&lt;tns1:AccountType&gt;&lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/type&quot;/&gt;&lt;/tns1:AccountType&gt;&lt;tns1:Amount&gt;&lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/amount&quot;/&gt;&lt;/tns1:Amount&gt;&lt;/tns1:AccountDetails&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20170703064302PLT&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1499080001525&quot; version=&quot;2.0&quot;&gt;&#10;    &lt;xsl:param name=&quot;JDBCQuery&quot;/&gt;&#10;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;&gt;&#10;        &lt;tns1:AccountDetails&gt;&#10;            &lt;tns1:AccountNumber&gt;&#10;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/id&quot;/&gt;&#10;            &lt;/tns1:AccountNumber&gt;&#10;            &lt;tns1:AccountType&gt;&#10;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/type&quot;/&gt;&#10;            &lt;/tns1:AccountType&gt;&#10;            &lt;tns1:Amount&gt;&#10;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/amount&quot;/&gt;&#10;            &lt;/tns1:Amount&gt;&#10;        &lt;/tns1:AccountDetails&gt;&#10;    &lt;/xsl:template&gt;&#10;&lt;/xsl:stylesheet&gt;"/>
+</activity-dir>
+<link-dir id="4860323b-5449-4e7d-94fa-c8b1d1645dac" label="" linkType="SUCCESS" name="JDBCQueryTogetOut" points="[[180,59],[212,59]]" source="58bcfa3c-2b66-4ba4-ae0c-92a735495cad" target="b9caf8a1-ab30-4b05-ad6f-27a7b1866003"/>
+<activity-dir height="48" id="58bcfa3c-2b66-4ba4-ae0c-92a735495cad" name="JDBCQuery" type="bw.jdbc.JDBCQuery" width="48" x="131" y="35">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+58bcfa3c-2b66-4ba4-ae0c-92a735495cad+input&quot; xmlns:tns3=&quot;http://xmlns.example.com/Account/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;get&quot;/&gt;&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;&gt;&lt;tns4:jdbcQueryActivityInput&gt;&lt;id&gt;&lt;xsl:value-of select=&quot;xsd:int($get/parameters/tns3:accountGetParameters/tns3:id)&quot;/&gt;&lt;/id&gt;&lt;/tns4:jdbcQueryActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+58bcfa3c-2b66-4ba4-ae0c-92a735495cad+input&quot; xmlns:tns3=&quot;http://xmlns.example.com/Account/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;get.parameters&quot;/&gt;&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;&gt;&lt;tns4:jdbcQueryActivityInput&gt;&lt;id&gt;&lt;xsl:value-of select=&quot;xsd:int($get.parameters/tns3:id)&quot;/&gt;&lt;/id&gt;&lt;/tns4:jdbcQueryActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.JDBCQuery">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" sqlStatement="SELECT *&#10;  FROM &quot;public&quot;.&quot;accounts&quot;&#10;  WHERE &quot;id&quot; = ?&#10;" timeout="10" type="jdbcPalette:JDBCQueryActivity">
+<PreparedParameters DataType="4" DataTypeDisplayValue="INTEGER" ParameterName="id"/>
+<columnMetadata columnName="id" dataType="4" typeName="int4"/>
+<columnMetadata columnName="type" dataType="12" status="OptionalElement" typeName="text"/>
+<columnMetadata columnName="amount" dataType="2" status="OptionalElement" typeName="numeric"/>
+</value>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<link-dir id="775347ea-f60b-4456-831d-a47ad27a3ce6" label="" linkType="SUCCESS" name="LogTogetOut" points="[[261,59],[292,59]]" source="b9caf8a1-ab30-4b05-ad6f-27a7b1866003" target="66172106-babe-4368-bc32-3f52092636e7"/>
+<activity-dir height="48" id="b9caf8a1-ab30-4b05-ad6f-27a7b1866003" name="Log" type="bw.generalactivities.log" width="48" x="212" y="35">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;&gt;&lt;tns2:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns2:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;&gt;&lt;tns2:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns2:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.generalactivities.log" version="6.0.0.001">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+<value role="Info" suppressJobInfo="true" type="generalactivities:Log"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="16" id="6457b537-6afd-4e42-aa82-4029176fd3df" name="OnMessageEnd" type="onMessageEnd" width="16" x="438" y="63"/>
+</on-message>
+</pick>
+</process-dir>

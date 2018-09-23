@@ -1,0 +1,54 @@
+<process-dir height="412" id="accountservice.module.Activator" name="accountservice.module.Activator" type="process" width="701" x="140" y="20">
+<partnerLinks>
+<partner-link id="ModuleActivator" myRole="use" name="ModuleActivator" partnerLinkType="partnerLinkType"/>
+</partnerLinks>
+<ProcessInfo createdBy="tibco" createdOn="Wed Jul 05 02:51:55 EDT 2017" description="" modifiedBy="" modifiedOn="" modifiers="public" productVersion="2.3.0 V29 2017-05-09" scalable="true" singleton="true" stateless="true" type="IT"/>
+<pick collapse="false" createInstance="true" height="307" id="287e0f71-1cb7-4299-aaac-60f73688f3f7" name="pick" type="pick" width="458" x="76" y="44">
+<on-message height="146" id="114562c1-59ca-4c37-b174-f76ca3ac2010" input="true" operation="onStartup" partner-link="ModuleActivator" portType="ModuleActivator" type="onMessage" variable="onStartup" width="440" x="9" y="11">
+<activity-dir height="16" id="7a833c11-e1f4-4dd2-8798-476e6742feb4" name="OnMessageStart" type="onMessageStart" width="16" x="-19" y="63"/>
+<link-dir id="e900f654-c037-4951-951f-813597aa7e51" label="" linkType="SUCCESS" name="SQLDirectToSQLDirect1" points="[[127,64],[213,64]]" source="d1a99172-f946-4bfd-a7a4-89fabac65aec" target="97b68c21-1af8-48c0-ae18-d3f7fe771337"/>
+<activity-dir height="48" id="d1a99172-f946-4bfd-a7a4-89fabac65aec" name="drop_accounts" type="bw.jdbc.SQLDirect" width="48" x="78" y="40">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d1a99172-f946-4bfd-a7a4-89fabac65aec+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;SQLDirect-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;DROP TABLE IF EXISTS public.accounts&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d1a99172-f946-4bfd-a7a4-89fabac65aec+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;SQLDirect-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;DROP TABLE IF EXISTS public.accounts&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<link-dir id="1dd77251-d067-4035-9d69-6ec16426a74a" label="" linkType="SUCCESS" name="create_accountsToSQLDirect" points="[[262,64],[342,64]]" source="97b68c21-1af8-48c0-ae18-d3f7fe771337" target="32c013f2-a311-48cf-909b-f163bbf2bd35"/>
+<activity-dir height="48" id="97b68c21-1af8-48c0-ae18-d3f7fe771337" name="create_accounts" type="bw.jdbc.SQLDirect" width="48" x="213" y="40">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+97b68c21-1af8-48c0-ae18-d3f7fe771337+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;SQLDirect1-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;CREATE TABLE IF NOT EXISTS public.accounts(id integer NOT NULL, type text, amount numeric, PRIMARY KEY (id))WITH (OIDS = FALSE)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+97b68c21-1af8-48c0-ae18-d3f7fe771337+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;SQLDirect1-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;CREATE TABLE IF NOT EXISTS public.accounts(id integer NOT NULL, type text, amount numeric, PRIMARY KEY (id))WITH (OIDS = FALSE)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="48" id="32c013f2-a311-48cf-909b-f163bbf2bd35" name="seed_accounts" type="bw.jdbc.SQLDirect" width="48" x="342" y="40">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+32c013f2-a311-48cf-909b-f163bbf2bd35+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;seed_accounts-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;INSERT INTO public.accounts(id, type, amount) VALUES (16796,'Savings',89738.49),(41175,'Savings',45609.26),(64163,'Savings',44093.74),(84084,'Checking',25416.91),(26123,'Checking',20497.83)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+32c013f2-a311-48cf-909b-f163bbf2bd35+input&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;seed_accounts-input&quot; match=&quot;/&quot;&gt;&lt;tns:ActivityInputType&gt;&lt;statement&gt;&lt;xsl:value-of select=&quot;&amp;quot;INSERT INTO public.accounts(id, type, amount) VALUES (16796,'Savings',89738.49),(41175,'Savings',45609.26),(64163,'Savings',44093.74),(84084,'Checking',25416.91),(26123,'Checking',20497.83)&amp;quot;&quot;/&gt;&lt;/statement&gt;&lt;/tns:ActivityInputType&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.jdbc.SQLDirect">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/jdbc#//SQLDirectActivity"/>
+<value maxRows="100" sharedResourceProperty="jdbcProperty" timeout="10" type="jdbcPalette:SQLDirectActivity"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="16" id="c3893ffa-c714-4db0-b623-f05bf8ad1b3d" name="OnMessageEnd" type="onMessageEnd" width="16" x="438" y="63"/>
+</on-message>
+<on-message height="141" id="74b1a823-6e59-4594-aaa5-231539efa325" input="true" operation="onShutdown" partner-link="ModuleActivator" portType="ModuleActivator" type="onMessage" variable="onShutdown" width="440" x="9" y="157">
+<activity-dir height="16" id="1878d0f9-0ff8-4c3c-93f8-f5681e1324c1" name="OnMessageStart1" type="onMessageStart" width="16" x="-19" y="63"/>
+<activity-dir height="16" id="c4618d9b-b7bd-4c32-8946-7b1ac100e939" name="OnMessageEnd1" type="onMessageEnd" width="16" x="438" y="63"/>
+</on-message>
+</pick>
+</process-dir>
