@@ -163,6 +163,17 @@
                 </complexContent>
             </complexType>
             <element name="ActivityTimedOutException" type="tns:ActivityTimedOutExceptionType"/>
+            <complexType name="DuplicateKeyExceptionType">
+                <complexContent>
+                    <extension base="tns:ActivityExceptionType">
+                        <sequence>
+                            <element name="duplicateKey" type="string"/>
+                            <element minOccurs="0" name="previousJobID" type="string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
         <schema
             targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d1a99172-f946-4bfd-a7a4-89fabac65aec+input"
@@ -1093,8 +1104,6 @@
                                 tibex:constructor="onMessageEnd" tibex:xpdlId="c3893ffa-c714-4db0-b623-f05bf8ad1b3d"/>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d1a99172-f946-4bfd-a7a4-89fabac65aec+input&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SQLDirect-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInputType>&lt;statement>&lt;xsl:value-of select=&quot;&amp;quot;DROP TABLE IF EXISTS public.accounts&amp;quot;&quot;/>&lt;/statement>&lt;/tns:ActivityInputType>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="drop_accounts-input"
                                     name="drop_accounts"
                                     outputVariable="drop_accounts"
@@ -1127,8 +1136,6 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+97b68c21-1af8-48c0-ae18-d3f7fe771337+input&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SQLDirect1-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInputType>&lt;statement>&lt;xsl:value-of select=&quot;&amp;quot;CREATE TABLE IF NOT EXISTS public.accounts(id integer NOT NULL, type text, amount numeric, PRIMARY KEY (id))WITH (OIDS = FALSE)&amp;quot;&quot;/>&lt;/statement>&lt;/tns:ActivityInputType>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="create_accounts-input"
                                     name="create_accounts"
                                     outputVariable="create_accounts"
@@ -1164,8 +1171,6 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+32c013f2-a311-48cf-909b-f163bbf2bd35+input&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;seed_accounts-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInputType>&lt;statement>&lt;xsl:value-of select=&quot;&amp;quot;INSERT INTO public.accounts(id, type, amount) VALUES (16796,'Savings',89738.49),(41175,'Savings',45609.26),(64163,'Savings',44093.74),(84084,'Checking',25416.91),(26123,'Checking',20497.83)&amp;quot;&quot;/>&lt;/statement>&lt;/tns:ActivityInputType>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="seed_accounts-input"
                                     name="seed_accounts"
                                     outputVariable="seed_accounts"

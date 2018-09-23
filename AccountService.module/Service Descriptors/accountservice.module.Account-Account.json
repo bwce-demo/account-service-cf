@@ -11,6 +11,7 @@
   "paths" : {
     "/account/{id}" : {
       "get" : {
+        "summary" : "",
         "description" : "",
         "operationId" : "get-account",
         "consumes" : [ "application/json" ],
