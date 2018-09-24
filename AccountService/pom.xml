@@ -59,6 +59,7 @@
           <instances>${bwpcf.instances}</instances>
           <skip>false</skip>
           <memory>${bwpcf.memory}</memory>
+          <healthCheckTimeout>180</healthCheckTimeout>
           <buildpack>${bwpcf.buildpack}</buildpack>
           <env>
             <APP_CONFIG_PROFILE>${bwpcf.env.0}</APP_CONFIG_PROFILE>
